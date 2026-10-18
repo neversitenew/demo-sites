@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="yandex" content="noindex, nofollow">
+<title>Garage X — Автосервис, Кокшетау (демо-концепт)</title>
+<meta name="description" content="Легковой автосервис: коробки АКПП и МКПП, двигатели, ходовая, диагностика и шиномонтаж. Работает каждый день до полуночи.">
+<meta name="theme-color" content="#14161a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>:root{--accent:#FF6B2C}</style>
+<style>*,*::before,*::after{box-sizing:border-box}
+:root{
+  --ink:#14161a;--ink-2:#3a3f47;--muted:#6b717b;
+  --paper:#f4f2ee;--card:#ffffff;--line:#e3dfd8;
+  --dark:#14161a;--dark-2:#1f2228;--on-dark:#f4f2ee;--on-dark-2:#a9aeb6;
+  --ok:#2fbf71;--closed:#ff6b6b;
+  --r:14px;--gut:16px;
+}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.5 Manrope,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding-bottom:88px}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 var(--gut)}
+
+/* demo plaque */
+.demo{background:#2a2d33;color:#d9dce1;font-size:13px;line-height:1.35;text-align:center;padding:8px var(--gut)}
+.demo b{color:var(--accent);font-weight:700}
+
+/* hero */
+.hero{background:var(--dark);color:var(--on-dark);padding:28px 0 32px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:repeating-linear-gradient(-45deg,var(--accent) 0 14px,var(--dark) 14px 28px);opacity:.9}
+.kicker{margin:0 0 10px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.hero h1{margin:0;font-size:clamp(40px,11vw,76px);line-height:.95;font-weight:800;letter-spacing:-.03em}
+.lead{margin:14px 0 0;font-size:18px;line-height:1.4;color:var(--on-dark);max-width:34em}
+.addr{margin:12px 0 0;color:var(--on-dark-2);font-size:15px}
+.badge{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:6px 12px 6px 10px;border-radius:999px;background:var(--dark-2);font-size:14px;font-weight:700;color:var(--on-dark)}
+.badge::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--on-dark-2)}
+.badge.is-open::before{background:var(--ok);box-shadow:0 0 0 4px rgba(47,191,113,.18)}
+.badge.is-closed::before{background:var(--closed)}
+.phone{display:block;margin:20px 0 0;font-size:clamp(28px,8.4vw,44px);font-weight:800;letter-spacing:-.01em;text-decoration:none;color:var(--on-dark);white-space:nowrap}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:54px;padding:0 18px;border-radius:12px;font-weight:800;font-size:17px;text-decoration:none;border:2px solid transparent;text-align:center}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-main{background:var(--accent);color:var(--ink)}
+.btn-ghost{border-color:#3a3f47;color:var(--on-dark)}
+.btn-wa{grid-column:1/-1;border-color:#3a3f47;color:var(--on-dark)}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none}
+.facts li{font-size:14px;color:var(--on-dark-2);border:1px solid #33373e;border-radius:999px;padding:5px 12px}
+
+/* sections */
+section{padding:40px 0}
+section+section{border-top:1px solid var(--line)}
+h2{margin:0 0 6px;font-size:28px;line-height:1.1;font-weight:800;letter-spacing:-.02em}
+.sub{margin:0 0 20px;color:var(--muted)}
+
+/* services */
+.svc-group+.svc-group{margin-top:22px}
+.svc-group h3{margin:0 0 8px;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.svc{list-style:none;margin:0;padding:0;background:var(--card);border:1px solid var(--line);border-radius:var(--r)}
+.svc li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:14px 16px;font-weight:600}
+.svc li+li{border-top:1px solid var(--line)}
+.svc .price{font-weight:800;white-space:nowrap}
+.note{margin:16px 0 0;padding:14px 16px;border-radius:var(--r);background:#fff7e0;border:1px solid #f1e2b4;font-size:15px}
+.note a{font-weight:800;white-space:nowrap}
+
+/* praise */
+.praise{display:grid;gap:12px;margin:0;padding:0;list-style:none;counter-reset:p}
+.praise li{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 18px 18px 64px;position:relative;counter-increment:p}
+.praise li::before{content:counter(p);position:absolute;left:18px;top:16px;width:32px;height:32px;border-radius:50%;background:var(--accent);color:var(--ink);font-weight:800;display:grid;place-items:center}
+.praise b{display:block;font-size:18px;line-height:1.25}
+.praise span{display:block;margin-top:4px;color:var(--ink-2)}
+
+/* rating + reviews */
+.score{display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:var(--dark);color:var(--on-dark);border-radius:var(--r);padding:18px 20px;margin-bottom:16px}
+.score-num{font-size:52px;line-height:1;font-weight:800;letter-spacing:-.03em}
+.stars{color:var(--accent);letter-spacing:2px;font-size:18px}
+.score-meta{font-size:14px;color:var(--on-dark-2)}
+.score-meta a{color:var(--on-dark);font-weight:700}
+.reviews{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+.review{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px}
+.review p{margin:0}
+.review-meta{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:10px;font-size:14px;color:var(--muted)}
+.review-meta a{font-weight:700;color:var(--ink)}
+.disclaimer{margin:14px 0 0;font-size:13px;color:var(--muted)}
+
+/* contacts */
+.contact{display:grid;gap:16px}
+.info{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.info dt{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.info dd{margin:2px 0 14px;font-weight:600}
+.info dd:last-child{margin-bottom:0}
+.hours{border-collapse:collapse;width:100%}
+.hours td{padding:3px 0}
+.hours td+td{text-align:right}
+.map{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:#e7e3dc;min-height:300px}
+.map iframe{display:block;width:100%;height:320px;border:0}
+.map-links{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:10px;font-size:15px;font-weight:700}
+
+/* final cta */
+.final{background:var(--dark);color:var(--on-dark);text-align:center;border-top:0}
+.final h2{font-size:30px}
+.final .sub{color:var(--on-dark-2)}
+.final .phone{margin:4px 0 18px}
+.final .actions{max-width:520px;margin:0 auto}
+
+footer{padding:24px 0 32px;font-size:13px;color:var(--muted);text-align:center}
+footer p{margin:4px 0}
+
+/* floating call (mobile) */
+.fab{position:fixed;left:var(--gut);right:var(--gut);bottom:calc(12px + env(safe-area-inset-bottom));z-index:20;display:flex;align-items:center;justify-content:center;gap:10px;min-height:58px;border-radius:14px;background:var(--accent);color:var(--ink);font-weight:800;font-size:18px;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.28);transition:transform .2s,opacity .2s}
+.fab svg{width:22px;height:22px}
+.fab.is-hidden{transform:translateY(140%);opacity:0;pointer-events:none}
+
+@media (min-width:760px){
+  .hero{padding:48px 0 56px}
+  .actions{grid-template-columns:auto auto auto;justify-content:start}
+  .btn-wa{grid-column:auto}
+  .praise{grid-template-columns:repeat(3,1fr)}
+  .praise li{padding:64px 18px 18px}
+  .praise li::before{top:18px}
+  .reviews{grid-template-columns:1fr 1fr}
+  .contact{grid-template-columns:1fr 1.4fr;align-items:start}
+  .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .svc-grid .svc-group+.svc-group{margin-top:0}
+}
+@media (min-width:900px){
+  body{padding-bottom:0}
+  .fab{display:none}
+}
+@media (prefers-reduced-motion:reduce){.fab{transition:none}}
+</style>
+</head>
+<body>
+<div class="demo"><b>Демо-концепт</b>, не официальный сайт, удалим по первой просьбе</div>
+<header class="hero" data-hide-fab>
+  <div class="wrap">
+    <p class="kicker">Автосервис · Кокшетау</p>
+    <h1>Garage X</h1>
+    <p class="lead">Легковой автосервис: коробки АКПП и МКПП, двигатели, ходовая, диагностика и шиномонтаж. Работает каждый день до полуночи.</p>
+    <p class="addr">ул. Акан Серэ, 42а</p>
+    <div class="badge" data-hours='[[&quot;08:00&quot;,&quot;24:00&quot;],[&quot;08:00&quot;,&quot;24:00&quot;],[&quot;08:00&quot;,&quot;24:00&quot;],[&quot;08:00&quot;,&quot;24:00&quot;],[&quot;08:00&quot;,&quot;24:00&quot;],[&quot;08:00&quot;,&quot;24:00&quot;],[&quot;08:00&quot;,&quot;24:00&quot;]]' data-tz="5">Ежедневно 08:00–24:00</div>
+    <a class="phone" href="tel:+77066964807">+7 706 696 48 07</a>
+    <div class="actions"><a class="btn btn-main" href="tel:+77066964807"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Позвонить</a><a class="btn btn-ghost" href="https://2gis.kz/kokshetau/search/%D0%90%D0%BA%D0%B0%D0%BD%20%D0%A1%D0%B5%D1%80%D1%8D%2042%D0%B0" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>Маршрут</a><a class="btn btn-wa" href="https://wa.me/77066964807" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>Написать в WhatsApp</a></div>
+    <ul class="facts"><li>Оплата наличными или по QR</li></ul>
+  </div>
+</header>
+<main>
+<section id="services"><div class="wrap">
+  <h2>Услуги</h2>
+  <div class=""><div class="svc-group">
+      
+      <ul class="svc"><li><span>Ремонт АКПП и МКПП</span></li><li><span>Ремонт бензиновых двигателей</span></li><li><span>Ремонт ходовой части</span></li><li><span>Компьютерная диагностика</span></li><li><span>Шиномонтаж и балансировка</span></li><li><span>Замена масла</span></li><li><span>Сварочные работы</span></li></ul>
+    </div></div>
+  <p class="note">Цены уточняйте по телефону: <a href="tel:+77066964807">+7 706 696 48 07</a></p>
+</div></section>
+<section id="praise"><div class="wrap">
+  <h2>За что хвалят</h2>
+  <p class="sub">По отзывам клиентов в 2ГИС</p>
+  <ol class="praise"><li><b>Быстро и чётко</b><span>Например, рычаг подвески заменили за полчаса.</span></li><li><b>Честные цены</b><span>Цены называют адекватными, лишних услуг не навязывают.</span></li><li><b>Перезванивают после ремонта</b><span>Сами звонят, чтобы узнать, всё ли в порядке с машиной.</span></li></ol>
+</div></section>
+<section id="reviews"><div class="wrap">
+  <h2>Рейтинг и отзывы</h2>
+  <p class="sub">Пересказ отзывов, без имён авторов</p>
+  <div class="score">
+    <div class="score-num">4,9</div>
+    <div>
+      <div class="stars" aria-hidden="true">★★★★★</div>
+      <div class="score-meta">83 отзыва · по данным <a href="https://2gis.ru/reviews/70000001104026549/review/272524525" target="_blank" rel="noopener">2ГИС</a> · на октябрь 2026</div>
+    </div>
+  </div>
+  <ul class="reviews"><li class="review"><p>Быстро и аккуратно сделали шиномонтаж, проверили и отбалансировали колёса. Персонал вежливый, лишнего не навязывали.</p></li><li class="review"><p>Мастер работает чётко, цены адекватные, удобно, что сервис в центре.</p></li><li class="review"><p>К проблеме отнеслись серьёзно и всё исправили, а после ремонта сами перезвонили узнать, всё ли в порядке.</p></li><li class="review"><p>Заменили рычаг за полчаса, быстро и качественно.</p></li><li class="review"><p>Взяли недорого, машину сделали. Автор советует обслуживаться здесь.</p></li></ul>
+  <p class="disclaimer">Оригиналы отзывов и актуальный рейтинг смотрите в <a href="https://2gis.ru/reviews/70000001104026549/review/272524525" target="_blank" rel="noopener">2ГИС</a>.</p>
+</div></section>
+<section id="contacts"><div class="wrap">
+  <h2>Адрес и часы</h2>
+  <p class="sub">Кокшетау</p>
+  <div class="contact">
+    <dl class="info">
+      <dt>Адрес</dt><dd>ул. Акан Серэ, 42а</dd>
+      <dt>Часы работы</dt><dd><table class="hours"><tr><td>Ежедневно</td><td>08:00–24:00</td></tr></table></dd>
+      <dt>Телефон</dt><dd><a href="tel:+77066964807">+7 706 696 48 07</a></dd>
+    </dl>
+    <div>
+      <div class="map"><iframe src="https://yandex.ru/map-widget/v1/?mode=search&amp;text=%D0%9A%D0%BE%D0%BA%D1%88%D0%B5%D1%82%D0%B0%D1%83%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%90%D0%BA%D0%B0%D0%BD%20%D0%A1%D0%B5%D1%80%D1%8D%2C%2042%D0%B0&amp;z=16" title="Карта: Garage X" loading="lazy" allowfullscreen></iframe></div>
+      <div class="map-links"><a href="https://2gis.kz/kokshetau/search/%D0%90%D0%BA%D0%B0%D0%BD%20%D0%A1%D0%B5%D1%80%D1%8D%2042%D0%B0" target="_blank" rel="noopener">Открыть в 2ГИС и проложить маршрут →</a></div>
+    </div>
+  </div>
+</div></section>
+<section class="final" data-hide-fab><div class="wrap">
+  <h2>Позвоните — подскажем по вашей машине</h2>
+  <p class="sub">Ежедневно 08:00–24:00</p>
+  <a class="phone" href="tel:+77066964807">+7 706 696 48 07</a>
+  <div class="actions">
+    <a class="btn btn-main" href="tel:+77066964807"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Позвонить</a>
+    <a class="btn btn-ghost" href="https://2gis.kz/kokshetau/search/%D0%90%D0%BA%D0%B0%D0%BD%20%D0%A1%D0%B5%D1%80%D1%8D%2042%D0%B0" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>Маршрут</a>
+  </div>
+</div></section>
+</main>
+<footer class="wrap">
+  <p>Демо-концепт, не официальный сайт, удалим по первой просьбе.</p>
+  <p>Данные из открытой карточки 2ГИС, октябрь 2026. Перед визитом уточняйте по телефону.</p>
+</footer>
+<a class="fab is-hidden" href="tel:+77066964807" aria-label="Позвонить +7 706 696 48 07"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Позвонить</a>
+<script>(function () {
+  // Бейдж «Открыто до …» по реальным часам. Часовой пояс бизнеса — data-tz (часы от UTC).
+  var el = document.querySelector('[data-hours]');
+  if (el) {
+    try {
+      var h = JSON.parse(el.getAttribute('data-hours'));
+      var tz = Number(el.getAttribute('data-tz')) || 0;
+      var short = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
+      var mins = function (t) { var p = t.split(':'); return +p[0] * 60 + +p[1]; };
+      var now = new Date(Date.now() + tz * 3600000);
+      var d = (now.getUTCDay() + 6) % 7;
+      var m = now.getUTCHours() * 60 + now.getUTCMinutes();
+      var today = h[d], txt = '', open = false;
+      if (today && m >= mins(today[0]) && m < mins(today[1])) {
+        open = true; txt = 'Открыто до ' + today[1];
+      } else if (today && m < mins(today[0])) {
+        txt = 'Закрыто · откроется в ' + today[0];
+      } else {
+        for (var i = 1; i <= 7; i++) {
+          var n = (d + i) % 7;
+          if (h[n]) {
+            txt = (today ? 'Закрыто' : 'Сегодня выходной') + ' · откроется ' + (i === 1 ? 'завтра' : 'в ' + short[n]) + ' в ' + h[n][0];
+            break;
+          }
+        }
+      }
+      if (txt) { el.textContent = txt; el.classList.add(open ? 'is-open' : 'is-closed'); }
+    } catch (e) {}
+  }
+
+  // Плавающая кнопка звонка прячется, пока на экране первый экран или финальный блок.
+  var fab = document.querySelector('.fab');
+  var watch = document.querySelectorAll('[data-hide-fab]');
+  if (fab && watch.length && 'IntersectionObserver' in window) {
+    var visible = new Set();
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { e.isIntersecting ? visible.add(e.target) : visible.delete(e.target); });
+      fab.classList.toggle('is-hidden', visible.size > 0);
+    }, { threshold: 0.15 });
+    watch.forEach(function (w) { io.observe(w); });
+  }
+})();
+</script>
+</body>
+</html>
