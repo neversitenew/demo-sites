@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="yandex" content="noindex, nofollow">
+<title>Boss Service — Автосервис, Кокшетау (демо-концепт)</title>
+<meta name="description" content="Легковой автосервис: находят настоящую причину неисправности и чинят двигатель, ходовую и электрику. Без выходных.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Russo+One&display=swap" rel="stylesheet">
+<style>:root{--accent:#3D8BFD}</style>
+<style>*,*::before,*::after{box-sizing:border-box}
+:root{
+  --ink:#14161a;--ink-2:#3a3f47;--muted:#6b717b;
+  --paper:#f4f2ee;--card:#ffffff;--line:#e3dfd8;
+  --dark:#14161a;--dark-2:#1f2228;--on-dark:#f4f2ee;--on-dark-2:#a9aeb6;
+  --ok:#2fbf71;--closed:#ff6b6b;
+  --r:14px;--gut:16px;
+}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.5 Manrope,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding-bottom:88px}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 var(--gut)}
+
+/* demo plaque */
+.demo{background:#2a2d33;color:#d9dce1;font-size:13px;line-height:1.35;text-align:center;padding:8px var(--gut)}
+.demo b{color:var(--accent);font-weight:700}
+
+/* hero */
+.hero{background:var(--dark);color:var(--on-dark);padding:28px 0 32px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:repeating-linear-gradient(-45deg,var(--accent) 0 14px,var(--dark) 14px 28px);opacity:.9}
+.kicker{margin:0 0 10px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.hero h1{margin:0;font-size:clamp(40px,11vw,76px);line-height:.95;font-weight:800;letter-spacing:-.03em}
+.lead{margin:14px 0 0;font-size:18px;line-height:1.4;color:var(--on-dark);max-width:34em}
+.addr{margin:12px 0 0;color:var(--on-dark-2);font-size:15px}
+.badge{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:6px 12px 6px 10px;border-radius:999px;background:var(--dark-2);font-size:14px;font-weight:700;color:var(--on-dark)}
+.badge::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--on-dark-2)}
+.badge.is-open::before{background:var(--ok);box-shadow:0 0 0 4px rgba(47,191,113,.18)}
+.badge.is-closed::before{background:var(--closed)}
+.phone{display:block;margin:20px 0 0;font-size:clamp(28px,8.4vw,44px);font-weight:800;letter-spacing:-.01em;text-decoration:none;color:var(--on-dark);white-space:nowrap}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.actions.n1{grid-template-columns:1fr}
+.actions.n3 .btn-main{grid-column:1/-1}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:54px;padding:0 18px;border-radius:12px;font-weight:800;font-size:17px;text-decoration:none;border:2px solid transparent;text-align:center}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-main{background:var(--accent);color:var(--ink)}
+.btn-ghost{border-color:rgba(255,255,255,.22);color:var(--on-dark)}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none}
+.facts li{font-size:14px;color:var(--on-dark-2);border:1px solid #33373e;border-radius:999px;padding:5px 12px}
+
+/* sections */
+section{padding:64px 0}
+section+section{border-top:1px solid var(--line)}
+h2{margin:0 0 6px;font-size:28px;line-height:1.1;font-weight:800;letter-spacing:-.02em}
+.sub{margin:0 0 20px;color:var(--muted)}
+
+/* services */
+.svc-group+.svc-group{margin-top:22px}
+.svc-group h3{margin:0 0 8px;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.svc{list-style:none;margin:0;padding:0;background:var(--card);border:1px solid var(--line);border-radius:var(--r)}
+.svc li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:14px 16px;font-weight:600}
+.svc li+li{border-top:1px solid var(--line)}
+.svc .price{font-weight:800;white-space:nowrap}
+.note{margin:16px 0 0;padding:14px 16px;border-radius:var(--r);background:#fff7e0;border:1px solid #f1e2b4;font-size:15px}
+.note a{font-weight:800;white-space:nowrap}
+
+/* praise */
+.praise{display:grid;gap:12px;margin:0;padding:0;list-style:none;counter-reset:p}
+.praise li{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 18px 18px 64px;position:relative;counter-increment:p}
+.praise li::before{content:counter(p);position:absolute;left:18px;top:16px;width:32px;height:32px;border-radius:50%;background:var(--accent);color:var(--ink);font-weight:800;display:grid;place-items:center}
+.praise b{display:block;font-size:18px;line-height:1.25}
+.praise span{display:block;margin-top:4px;color:var(--ink-2)}
+
+/* rating + reviews */
+.score{display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:var(--dark);color:var(--on-dark);border-radius:var(--r);padding:18px 20px;margin-bottom:16px}
+.score-num{font-size:52px;line-height:1;font-weight:800;letter-spacing:-.03em}
+.stars{color:var(--accent);letter-spacing:2px;font-size:18px}
+.score-meta{font-size:14px;color:var(--on-dark-2)}
+.score-meta a{color:var(--on-dark);font-weight:700}
+.reviews{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+.review{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px}
+.review p{margin:0}
+.review-meta{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:10px;font-size:14px;color:var(--muted)}
+.review-meta a{font-weight:700;color:var(--ink)}
+.disclaimer{margin:14px 0 0;font-size:13px;color:var(--muted)}
+
+/* contacts */
+.contact{display:grid;gap:16px}
+.info{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.info dt{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.info dd{margin:2px 0 14px;font-weight:600}
+.info dd:last-child{margin-bottom:0}
+.hours{border-collapse:collapse;width:100%}
+.hours td{padding:3px 0}
+.hours td+td{text-align:right}
+.map{position:relative;display:block;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);aspect-ratio:16/10;max-width:100%;color:inherit;text-decoration:none;background:#ebe7df}
+.map svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.m-bg{fill:#ebe7df}.m-park{fill:#cfe3c4}.m-water{fill:#bcd6ea}
+.m-road-wide path{stroke:#fff;stroke-width:16;fill:none}
+.m-road path{stroke:#fff;stroke-width:8;fill:none}
+.m-block rect{fill:#e0dbd1}
+.m-pin{fill:var(--accent);stroke:rgba(0,0,0,.25);stroke-width:1.5}
+.m-pin-dot{fill:#fff}
+.m-pulse{fill:var(--accent);opacity:.25;transform-box:fill-box;transform-origin:center;animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(.4);opacity:.45}100%{transform:scale(1.6);opacity:0}}
+.map-label{position:absolute;left:12px;top:12px;max-width:calc(100% - 24px);background:var(--card);border-radius:12px;padding:10px 14px;box-shadow:0 6px 18px rgba(0,0,0,.12);display:grid;gap:2px;font-size:14px;line-height:1.3}
+.map-label b{font-size:15px}
+.map-cta{position:absolute;right:12px;bottom:12px;background:var(--dark);color:var(--on-dark);border-radius:999px;padding:9px 14px;font-weight:700;font-size:14px;box-shadow:0 6px 18px rgba(0,0,0,.2);transition:transform .2s}
+.map-link:hover .map-cta,.map-link:focus-visible .map-cta{transform:translateY(-2px)}
+.map-link:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.m-pulse{animation:none}}
+
+/* final cta */
+.final{background:var(--dark);color:var(--on-dark);text-align:center;border-top:0}
+.final h2{font-size:30px}
+.final .sub{color:var(--on-dark-2)}
+.final .phone{margin:4px 0 18px}
+.final .actions{max-width:520px;margin:0 auto}
+
+footer{padding:24px 0 32px;font-size:13px;color:var(--muted);text-align:center}
+footer p{margin:4px 0}
+
+/* floating call (mobile) */
+.fab{position:fixed;left:var(--gut);right:var(--gut);bottom:calc(12px + env(safe-area-inset-bottom));z-index:20;display:flex;align-items:center;justify-content:center;gap:10px;min-height:58px;border-radius:14px;background:var(--accent);color:var(--ink);font-weight:800;font-size:18px;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.28);transition:transform .2s,opacity .2s}
+.fab svg{width:22px;height:22px}
+.fab.is-hidden{transform:translateY(140%);opacity:0;pointer-events:none}
+
+@media (min-width:760px){
+  .hero{padding:48px 0 56px}
+  .actions,.actions.n1,.actions.n2,.actions.n3{grid-template-columns:repeat(3,auto);justify-content:start}
+  .actions.n3 .btn-main{grid-column:auto}
+  .final .actions{justify-content:center}
+  .praise{grid-template-columns:repeat(3,1fr)}
+  .praise li{padding:64px 18px 18px}
+  .praise li::before{top:18px}
+  .reviews{grid-template-columns:1fr 1fr}
+  .contact{grid-template-columns:1fr 1.4fr;align-items:start}
+  .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .svc-grid .svc-group+.svc-group{margin-top:0}
+}
+@media (min-width:900px){
+  body{padding-bottom:0}
+  .fab{display:none}
+}
+@media (prefers-reduced-motion:reduce){.fab{transition:none}}
+
+/* ===== Темы ===== */
+
+/* Общий «мягкий» стиль (как у Boss Service): градиентный первый экран со скруглением, карточки с тенью, скруглённый финал */
+.t-soft .hero::after{display:none}
+.t-soft section+section{border-top:0}
+.t-soft .praise li,.t-soft .review,.t-soft .svc,.t-soft .info{border:0;box-shadow:0 6px 22px var(--shadow)}
+.t-soft .final{margin-top:24px}
+
+/* Dr.SHIN — графит и янтарь, шрифт Rubik, кнопки-пилюли */
+.t-tread{--paper:#f7f4ec;--line:#e6dfcf;--dark:#1d2026;--dark-2:rgba(255,255,255,.09);--on-dark-2:#b9b4a8;--r:18px;--shadow:rgba(40,32,10,.08)}
+.t-tread h1,.t-tread h2,.t-tread .score-num,.t-tread .praise b{font-family:Rubik,Manrope,sans-serif;font-weight:800;letter-spacing:-.015em}
+.t-tread .hero h1{font-size:clamp(42px,12vw,76px);line-height:1}
+.t-tread .hero{background:radial-gradient(110% 80% at 0% 0%,rgba(255,194,26,.28) 0%,transparent 55%),linear-gradient(180deg,#262a31,#1d2026);border-radius:0 0 32px 32px}
+.t-tread .btn,.t-tread .fab{border-radius:999px}
+.t-tread .kicker{display:inline-block;background:rgba(255,194,26,.14);padding:4px 12px;border-radius:999px}
+.t-tread .note{background:#fff4d1;border-color:#f1e0a8;border-radius:18px}
+.t-tread .score{background:linear-gradient(135deg,#1d2026 40%,#4a3a10)}
+.t-tread .final{background:linear-gradient(180deg,#262a31,#1d2026);border-radius:32px 32px 0 0}
+.t-tread .praise li::before{box-shadow:0 0 0 6px rgba(255,194,26,.22)}
+
+/* Garage X — тёмный шоколад и оранжевый, шрифт Montserrat, кнопки со скруглением 16px, сетка услуг плитками */
+.t-garage{--paper:#f8f1eb;--line:#ecdccf;--dark:#22130d;--dark-2:rgba(255,255,255,.09);--on-dark-2:#c9b3a5;--r:16px;--shadow:rgba(80,30,10,.09)}
+.t-garage h1,.t-garage h2,.t-garage .score-num,.t-garage .praise b{font-family:Montserrat,Manrope,sans-serif;font-weight:800;letter-spacing:-.02em}
+.t-garage .hero h1{font-size:clamp(44px,13vw,84px);line-height:.98}
+.t-garage .hero{background:radial-gradient(120% 90% at 100% 100%,rgba(255,107,44,.38) 0%,transparent 55%),linear-gradient(160deg,#2e1a12,#1c0f0a);border-radius:0 0 28px 0}
+.t-garage .kicker{color:#ffb08d}
+.t-garage .btn,.t-garage .fab{border-radius:16px}
+.t-garage .badge,.t-garage .facts li{border-radius:10px}
+.t-garage .svc{background:transparent;box-shadow:none;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.t-garage .svc li{background:var(--card);border-radius:14px;box-shadow:0 4px 16px var(--shadow);padding:16px 14px;min-height:72px;align-items:flex-end;border-top:0}
+.t-garage .svc li+li{border-top:0}
+.t-garage .note{background:#fff;border:0;box-shadow:0 4px 16px var(--shadow);border-left:4px solid var(--accent)}
+.t-garage .praise li::before{border-radius:10px}
+.t-garage .score{background:linear-gradient(135deg,#ff6b2c,#c2410c);color:#fff}
+.t-garage .score .stars{color:#fff}
+.t-garage .score-meta,.t-garage .score-meta a{color:#ffe6da}
+.t-garage .final{background:linear-gradient(160deg,#2e1a12,#1c0f0a);border-radius:28px 0 0 0}
+@media (min-width:760px){.t-garage .svc{grid-template-columns:repeat(4,1fr)}}
+
+/* Boss Service — сервисный: глубокий синий, мягкие формы, округлый шрифт */
+.t-boss{--shadow:rgba(14,42,90,.08);--paper:#f2f5fa;--line:#dbe3ef;--card:#fff;--dark:#0e2a5a;--dark-2:rgba(255,255,255,.1);--on-dark-2:#b7c5dd;--r:20px}
+.t-boss,.t-boss button,.t-boss .btn,.t-boss .topnav-links a{font-family:Roboto,system-ui,sans-serif}
+.t-boss h1,.t-boss h2,.t-boss h3,.t-boss .score-num,.t-boss .topnav-brand{font-family:'Russo One',Roboto,sans-serif;font-weight:400;letter-spacing:.01em}
+.t-boss .hero h1{font-size:clamp(36px,10vw,68px);line-height:1.02}
+.t-boss h2{font-size:24px}
+.t-boss .hero{background:radial-gradient(120% 90% at 100% 0%,#1f5bc4 0%,transparent 55%),var(--dark);border-radius:0 0 28px 28px}
+.t-boss .hero::after{display:none}
+.t-boss .kicker{color:#9cc2ff}
+.t-boss .btn,.t-boss .fab{border-radius:999px}
+.t-boss .btn-main{color:#fff;background:var(--accent)}
+.t-boss .fab{color:#fff}
+.t-boss .praise li{border:0;box-shadow:0 6px 24px rgba(14,42,90,.08)}
+.t-boss .praise li::before{color:#fff}
+.t-boss .review,.t-boss .svc,.t-boss .info{border:0;box-shadow:0 4px 18px rgba(14,42,90,.06)}
+.t-boss .note{background:#e8f0ff;border-color:#cddcfb}
+.t-boss .score{background:linear-gradient(135deg,#0e2a5a,#1f5bc4)}
+.t-boss .final{background:var(--dark);border-radius:28px 28px 0 0;margin-top:24px}
+.t-boss section+section{border-top:0}
+.t-boss .svc-group h3{color:var(--accent)}
+
+/* ===== Меню разделов сверху ===== */
+html{scroll-behavior:smooth}
+section[id]{scroll-margin-top:60px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:31;background:var(--dark)}
+.topnav{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--dark) 92%,transparent);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+.topnav-in{display:flex;align-items:center;gap:16px;min-height:52px}
+.topnav-brand{flex:none;color:var(--on-dark);font-weight:800;text-decoration:none;font-size:16px;letter-spacing:-.01em}
+.topnav-links{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin-left:auto;padding-block:8px;min-width:0}
+.topnav-links::-webkit-scrollbar{display:none}
+.topnav-links a{flex:none;color:var(--on-dark-2);text-decoration:none;font-size:14px;font-weight:700;padding:8px 12px;border-radius:999px;transition:background .2s,color .2s}
+.topnav-links a:hover{color:var(--on-dark);background:rgba(255,255,255,.08)}
+.topnav-links a.is-active{color:var(--ink);background:var(--accent)}
+.t-boss .topnav-links a.is-active{color:#fff}
+.topnav-links a:focus-visible,.topnav-brand:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (max-width:599px){
+  .topnav-brand{display:none}
+  .topnav-links{margin-left:0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body class="t-soft t-boss">
+<div class="demo" id="top"><b>Демо-концепт</b>, не официальный сайт, удалим по первой просьбе</div>
+<nav class="topnav" aria-label="Разделы страницы"><div class="wrap topnav-in">
+  <a class="topnav-brand" href="#top">Boss Service</a>
+  <div class="topnav-links"><a href="#services" data-nav="services">Услуги</a><a href="#praise" data-nav="praise">За что хвалят</a><a href="#reviews" data-nav="reviews">Отзывы</a><a href="#contacts" data-nav="contacts">Адрес</a><a href="#final" data-nav="final">Связаться</a></div>
+</div></nav>
+<header class="hero" data-hide-fab>
+  <div class="wrap">
+    <p class="kicker">Автосервис · Кокшетау</p>
+    <h1>Boss Service</h1>
+    <p class="lead">Легковой автосервис: находят настоящую причину неисправности и чинят двигатель, ходовую и электрику. Без выходных.</p>
+    <p class="addr">ул. Кызыл жар, 36Б, вход 1</p>
+    <div class="badge" data-hours='[[&quot;09:00&quot;,&quot;22:00&quot;],[&quot;09:00&quot;,&quot;22:00&quot;],[&quot;09:00&quot;,&quot;22:00&quot;],[&quot;09:00&quot;,&quot;22:00&quot;],[&quot;09:00&quot;,&quot;22:00&quot;],[&quot;09:00&quot;,&quot;22:00&quot;],[&quot;09:00&quot;,&quot;22:00&quot;]]' data-tz="5">Ежедневно 09:00–22:00</div>
+    <div class="actions n3"><a class="btn btn-main btn-wa" href="https://wa.me/77055785905" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>WhatsApp</a><a class="btn btn-ghost btn-ig" href="https://www.instagram.com/boss_service_kokshetau/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>Instagram</a><a class="btn btn-ghost btn-gis" href="https://2gis.ru/geo/70000001100793408" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>2ГИС</a></div>
+    <ul class="facts"><li>Без выходных и обеда</li></ul>
+  </div>
+</header>
+<main>
+<section id="services"><div class="wrap">
+  <h2>Услуги</h2>
+  <div class="svc-grid"><div class="svc-group">
+      <h3>Двигатель</h3>
+      <ul class="svc"><li><span>Ремонт бензиновых и дизельных двигателей</span></li><li><span>Турбины, инжекторы, карбюраторы</span></li></ul>
+    </div><div class="svc-group">
+      <h3>Ходовая и рулевое</h3>
+      <ul class="svc"><li><span>Ходовая часть</span></li><li><span>Рулевые рейки</span></li><li><span>Карданные валы</span></li></ul>
+    </div><div class="svc-group">
+      <h3>Электрика и диагностика</h3>
+      <ul class="svc"><li><span>Компьютерная диагностика</span></li><li><span>Ремонт электронных систем</span></li><li><span>Стартеры и генераторы</span></li><li><span>Автосигнализации</span></li></ul>
+    </div><div class="svc-group">
+      <h3>Обслуживание</h3>
+      <ul class="svc"><li><span>Замена масла</span></li><li><span>Развал-схождение</span></li><li><span>Шиномонтаж</span></li><li><span>Выхлопные системы</span></li><li><span>Климат-системы</span></li></ul>
+    </div><div class="svc-group">
+      <h3>Дополнительно</h3>
+      <ul class="svc"><li><span>Предпусковые подогреватели</span></li><li><span>Аккумуляторы</span></li><li><span>Автохимия и запчасти</span></li><li><span>Озонирование салона</span></li></ul>
+    </div></div>
+  <p class="note">Цены уточняйте в <a href="https://wa.me/77055785905" target="_blank" rel="noopener">WhatsApp</a></p>
+</div></section>
+<section id="praise"><div class="wrap">
+  <h2>За что хвалят</h2>
+  <p class="sub">По отзывам клиентов в 2ГИС</p>
+  <ol class="praise"><li><b>Находят настоящую причину</b><span>Вибрацию, которую не нашли на трёх других СТО, определили на вибростенде.</span></li><li><b>Перезванивают после ремонта</b><span>Через час после выдачи машины сами звонят узнать, всё ли нормально.</span></li><li><b>Всё в одном месте</b><span>Диагностика, подбор запчастей и запись на ремонт в удобное время.</span></li></ol>
+</div></section>
+<section id="reviews"><div class="wrap">
+  <h2>Рейтинг и отзывы</h2>
+  <p class="sub">Пересказ отзывов, без имён авторов</p>
+  <div class="score">
+    <div class="score-num">4,9</div>
+    <div>
+      <div class="stars" aria-hidden="true">★★★★★</div>
+      <div class="score-meta">по данным <a href="https://2gis.ru/geo/70000001100793408" target="_blank" rel="noopener">2ГИС</a> · на октябрь 2026</div>
+    </div>
+  </div>
+  <ul class="reviews"><li class="review"><p>Три СТО называли причиной вибрации правый привод или кривой диск. Здесь проверили на вибростенде, и оказалось, что виновата левая граната. Автор оставил машину утром, ему позвонили, и он забрал её готовой. Через час после этого сервис сам позвонил узнать, всё ли нормально.</p></li><li class="review"><p>Быстро и чётко, после ремонта замечаний не было. Автор рекомендует всем.</p></li><li class="review"><p>На диагностике мастера отнеслись внимательно и нашли проблему, тут же подобрали запчасти и записали на ремонт в удобное время.</p></li></ul>
+  <p class="disclaimer">Оригиналы отзывов и актуальный рейтинг смотрите в <a href="https://2gis.ru/geo/70000001100793408" target="_blank" rel="noopener">2ГИС</a>.</p>
+</div></section>
+<section id="contacts"><div class="wrap">
+  <h2>Адрес и часы</h2>
+  <p class="sub">Кокшетау</p>
+  <div class="contact">
+    <dl class="info">
+      <dt>Адрес</dt><dd>ул. Кызыл жар, 36Б, вход 1</dd>
+      <dt>Часы работы</dt><dd><table class="hours"><tr><td>Ежедневно</td><td>09:00–22:00</td></tr></table></dd>
+      <dt>Номер</dt><dd>+7 707 938 36 00</dd>
+    </dl>
+    <div>
+      <a class="map map-link" href="https://2gis.ru/geo/70000001100793408" target="_blank" rel="noopener" aria-label="Открыть Boss Service на карте 2ГИС"><svg viewBox="0 0 600 340" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="600" height="340" class="m-bg"/>
+        <path class="m-park" d="M40 210c40-30 110-20 130 20s-20 80-80 80-90-60-50-100z"/>
+        <path class="m-water" d="M-10 40c120 30 180-20 300 10s200 60 320 20v-40H-10z"/>
+        <g class="m-road-wide"><path d="M-10 150H610"/><path d="M330 -10V350"/></g>
+        <g class="m-road"><path d="M-10 250H610"/><path d="M-10 95L610 70"/><path d="M150 -10L190 350"/><path d="M470 -10L450 350"/><path d="M240 150L330 250"/></g>
+        <g class="m-block"><rect x="200" y="170" width="100" height="60" rx="6"/><rect x="360" y="170" width="70" height="60" rx="6"/><rect x="360" y="100" width="80" height="35" rx="6"/><rect x="490" y="170" width="90" height="60" rx="6"/><rect x="200" y="270" width="100" height="50" rx="6"/><rect x="360" y="270" width="70" height="50" rx="6"/><rect x="490" y="95" width="90" height="40" rx="6"/></g>
+        <circle class="m-pulse" cx="395" cy="200" r="34"/>
+        <path class="m-pin" d="M395 202c-14-18-24-30-24-44a24 24 0 0 1 48 0c0 14-10 26-24 44z"/>
+        <circle cx="395" cy="158" r="8" class="m-pin-dot"/>
+      </svg>
+      <span class="map-label"><b>Boss Service</b><span>ул. Кызыл жар, 36Б, вход 1</span></span>
+      <span class="map-cta">Открыть карту в 2ГИС →</span></a>
+    </div>
+  </div>
+</div></section>
+<section class="final" id="final" data-hide-fab><div class="wrap">
+  <h2>Напишите — подскажем по вашей машине</h2>
+  <p class="sub">Ежедневно 09:00–22:00</p>
+  <div class="actions n3"><a class="btn btn-main btn-wa" href="https://wa.me/77055785905" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>WhatsApp</a><a class="btn btn-ghost btn-ig" href="https://www.instagram.com/boss_service_kokshetau/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>Instagram</a><a class="btn btn-ghost btn-gis" href="https://2gis.ru/geo/70000001100793408" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>2ГИС</a></div>
+</div></section>
+</main>
+<footer class="wrap">
+  <p>Демо-концепт, не официальный сайт, удалим по первой просьбе.</p>
+  <p>Данные из открытой карточки 2ГИС, октябрь 2026. Перед визитом уточняйте актуальность.</p>
+</footer>
+<a class="fab fab-wa is-hidden" href="https://wa.me/77055785905" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>Написать в WhatsApp</a>
+<script>(function () {
+  // Бейдж «Открыто до …» по реальным часам. Часовой пояс бизнеса — data-tz (часы от UTC).
+  var el = document.querySelector('[data-hours]');
+  if (el) {
+    try {
+      var h = JSON.parse(el.getAttribute('data-hours'));
+      var tz = Number(el.getAttribute('data-tz')) || 0;
+      var short = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
+      var mins = function (t) { var p = t.split(':'); return +p[0] * 60 + +p[1]; };
+      var now = new Date(Date.now() + tz * 3600000);
+      var d = (now.getUTCDay() + 6) % 7;
+      var m = now.getUTCHours() * 60 + now.getUTCMinutes();
+      var today = h[d], txt = '', open = false;
+      if (today && m >= mins(today[0]) && m < mins(today[1])) {
+        open = true; txt = 'Открыто до ' + today[1];
+      } else if (today && m < mins(today[0])) {
+        txt = 'Закрыто · откроется в ' + today[0];
+      } else {
+        for (var i = 1; i <= 7; i++) {
+          var n = (d + i) % 7;
+          if (h[n]) {
+            txt = (today ? 'Закрыто' : 'Сегодня выходной') + ' · откроется ' + (i === 1 ? 'завтра' : 'в ' + short[n]) + ' в ' + h[n][0];
+            break;
+          }
+        }
+      }
+      if (txt) { el.textContent = txt; el.classList.add(open ? 'is-open' : 'is-closed'); }
+    } catch (e) {}
+  }
+
+  // Плавающая кнопка звонка прячется, пока на экране первый экран или финальный блок.
+  var fab = document.querySelector('.fab');
+  var watch = document.querySelectorAll('[data-hide-fab]');
+  if (fab && watch.length && 'IntersectionObserver' in window) {
+    var visible = new Set();
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { e.isIntersecting ? visible.add(e.target) : visible.delete(e.target); });
+      fab.classList.toggle('is-hidden', visible.size > 0);
+    }, { threshold: 0.15 });
+    watch.forEach(function (w) { io.observe(w); });
+  }
+})();
+
+// Подсветка активного раздела в верхнем меню
+(function () {
+  var links = document.querySelectorAll('[data-nav]');
+  if (!links.length) return;
+  var map = {}, secs = [];
+  links.forEach(function (a) {
+    var id = a.getAttribute('data-nav');
+    map[id] = a;
+    var s = document.getElementById(id);
+    if (s) secs.push(s);
+  });
+  var nav = document.querySelector('.topnav');
+  var current = null, lock = false, lockTimer = null;
+  function setActive(id) {
+    if (id === current) return;
+    current = id;
+    links.forEach(function (a) { a.classList.toggle('is-active', a.getAttribute('data-nav') === id); });
+    var a = map[id];
+    if (a) {
+      var box = a.parentNode, l = a.offsetLeft - 16;
+      if (l < box.scrollLeft || a.offsetLeft + a.offsetWidth > box.scrollLeft + box.clientWidth) box.scrollTo({ left: l, behavior: 'smooth' });
+    }
+  }
+  function spy() {
+    if (lock) return;
+    var line = (nav ? nav.offsetHeight : 52) + 24;
+    var pick = null;
+    secs.forEach(function (s) { if (s.getBoundingClientRect().top <= line) pick = s.id; });
+    var atEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+    if (atEnd && secs.length) pick = secs[secs.length - 1].id;
+    setActive(pick);
+  }
+  links.forEach(function (a) {
+    a.addEventListener('click', function () {
+      lock = true;
+      setActive(a.getAttribute('data-nav'));
+      clearTimeout(lockTimer);
+      lockTimer = setTimeout(function () { lock = false; spy(); }, 900);
+    });
+  });
+  var tick = false;
+  window.addEventListener('scroll', function () {
+    if (tick) return; tick = true;
+    requestAnimationFrame(function () { tick = false; spy(); });
+  }, { passive: true });
+  spy();
+})();
+</script>
+</body>
+</html>
