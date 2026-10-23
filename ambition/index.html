@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ambition — салон красоты в Кокшетау</title>
+<meta name="description" content="Ambition — салон красоты в Кокшетау: косметология с медлицензией, стрижки и окрашивание, маникюр, педикюр, шугаринг, массаж. Ауельбекова, 54. Ежедневно 10:00–20:00.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Prata&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f3ef;
+    --paper: #fbfaf8;
+    --ink: #151515;
+    --muted: #6d6a65;
+    --line: #dcd7cf;
+    --dark: #111;
+    --serif: "Prata", Georgia, serif;
+    --sans: "Golos Text", system-ui, sans-serif;
+    --wrap: 1180px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--ink); font: 400 16px/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
+  .eyebrow { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -.01em; }
+  h2 { font-size: clamp(32px, 4.4vw, 52px); line-height: 1.08; }
+  section { padding: 110px 0; scroll-margin-top: 68px; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 28px; border: 1px solid var(--ink); font-size: 14px; font-weight: 500; letter-spacing: .04em; transition: background .2s, color .2s; }
+  .btn-dark { background: var(--ink); color: #fff; }
+  .btn-dark:hover { background: transparent; color: var(--ink); }
+  .btn-line:hover { background: var(--ink); color: #fff; }
+
+  /* header */
+  header { position: sticky; top: 0; z-index: 20; background: rgba(245,243,239,.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .logo { font-family: var(--serif); font-size: 24px; letter-spacing: .02em; }
+  .logo small { display: block; font: 500 9px/1 var(--sans); letter-spacing: .28em; text-transform: uppercase; color: var(--muted); margin-top: 2px; }
+  .nav ul { display: flex; gap: 34px; list-style: none; font-size: 14px; }
+  .nav ul a { color: var(--muted); transition: color .2s; }
+  .nav ul a:hover { color: var(--ink); }
+  .nav .btn { height: 40px; padding: 0 18px; font-size: 13px; }
+
+  /* hero */
+  .hero { padding: 64px 0 0; }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: end; }
+  .hero h1 { font-size: clamp(44px, 6.6vw, 92px); line-height: .98; margin: 22px 0 28px; }
+  .hero h1 em { font-style: normal; color: var(--muted); }
+  .hero p.lead { font-size: 18px; color: var(--muted); max-width: 440px; }
+  .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 38px 0 56px; }
+  .facts { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
+  .facts div { padding: 22px 0 0; }
+  .facts b { display: block; font-family: var(--serif); font-weight: 400; font-size: 34px; line-height: 1; }
+  .facts span { font-size: 13px; color: var(--muted); }
+  .hero-img { position: relative; aspect-ratio: 4/5; }
+  .hero-img img { width: 100%; height: 100%; object-fit: cover; }
+  .checker { position: absolute; left: -28px; bottom: 36px; width: 56px; height: 56px;
+    background: conic-gradient(var(--ink) 25%, var(--paper) 0 50%, var(--ink) 0 75%, var(--paper) 0) 0 0/28px 28px; }
+
+  /* license strip */
+  .strip { background: var(--dark); color: #eee; padding: 26px 0; margin-top: 110px; }
+  .strip .wrap { display: flex; flex-wrap: wrap; gap: 14px 48px; justify-content: space-between; font-size: 14px; letter-spacing: .04em; }
+  .strip span::before { content: ""; display: inline-block; width: 6px; height: 6px; background: #eee; margin-right: 12px; vertical-align: middle; }
+
+  /* directions */
+  .head { display: flex; justify-content: space-between; align-items: end; gap: 32px; margin-bottom: 56px; }
+  .head p { max-width: 380px; color: var(--muted); }
+  .dirs { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .dir { padding: 34px 30px 38px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--bg); transition: background .25s; }
+  .dir:hover { background: var(--paper); }
+  .dir .n { font-size: 12px; color: var(--muted); letter-spacing: .12em; }
+  .dir h3 { font-size: 26px; margin: 46px 0 12px; }
+  .dir p { font-size: 15px; color: var(--muted); }
+  .dir .from { margin-top: 22px; font-size: 14px; font-weight: 500; }
+
+  /* prices */
+  #prices { background: var(--paper); }
+  .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
+  .tab { height: 42px; padding: 0 20px; border: 1px solid var(--line); background: none; font: 500 14px var(--sans); color: var(--muted); cursor: pointer; transition: all .2s; }
+  .tab:hover { color: var(--ink); border-color: var(--ink); }
+  .tab[aria-selected="true"] { background: var(--ink); border-color: var(--ink); color: #fff; }
+  .plist { display: none; columns: 2; column-gap: 72px; }
+  .plist.on { display: block; }
+  .row { display: flex; align-items: baseline; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); break-inside: avoid; font-size: 15px; }
+  .row .dots { flex: 1; }
+  .row .p { white-space: nowrap; font-weight: 500; }
+  .row small { display: block; color: var(--muted); font-size: 13px; }
+  .note { margin-top: 30px; font-size: 13px; color: var(--muted); }
+
+  /* team */
+  .team { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .member { background: var(--bg); padding: 30px; }
+  .member .av { width: 54px; height: 54px; border-radius: 50%; border: 1px solid var(--ink); display: grid; place-items: center; font-family: var(--serif); font-size: 22px; margin-bottom: 26px; }
+  .member h3 { font-size: 24px; }
+  .member .role { font-size: 13px; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; margin: 4px 0 16px; }
+  .member q { font-size: 15px; color: var(--muted); quotes: "«" "»"; }
+
+  /* gallery */
+  .gallery { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 280px 280px; gap: 10px; }
+  .gallery img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(.15); transition: filter .3s; }
+  .gallery img:hover { filter: none; }
+  .gallery .big { grid-row: span 2; }
+
+  /* reviews */
+  #reviews { background: var(--dark); color: #eee; }
+  #reviews .eyebrow, #reviews .head p { color: #9a968f; }
+  .score { display: flex; align-items: end; gap: 18px; }
+  .score b { font-family: var(--serif); font-weight: 400; font-size: 88px; line-height: .8; }
+  .score span { font-size: 14px; color: #9a968f; line-height: 1.4; }
+  .revs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #2c2c2c; border: 1px solid #2c2c2c; }
+  .rev { background: var(--dark); padding: 32px 30px; display: flex; flex-direction: column; gap: 22px; }
+  .rev p { font-family: var(--serif); font-size: 19px; line-height: 1.45; }
+  .rev footer { margin-top: auto; font-size: 13px; color: #9a968f; }
+  .rev footer b { color: #eee; font-weight: 500; display: block; }
+  .more { margin-top: 36px; }
+  .more a { border-bottom: 1px solid #555; padding-bottom: 3px; font-size: 14px; }
+
+  /* contacts */
+  .contacts { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; }
+  .clist { margin-top: 40px; }
+  .clist div { display: grid; grid-template-columns: 130px 1fr; padding: 18px 0; border-bottom: 1px solid var(--line); font-size: 16px; }
+  .clist dt { color: var(--muted); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; padding-top: 3px; }
+  .clist a { border-bottom: 1px solid var(--line); }
+  .clist a:hover { border-color: var(--ink); }
+  .contacts .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+  .map { position: relative; display: block; min-height: 460px; overflow: hidden; }
+  .map img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+  .map:hover img { transform: scale(1.03); }
+  .pin { position: absolute; left: 24px; right: 24px; bottom: 24px; background: var(--paper); padding: 24px 26px; font-size: 14px; color: var(--muted); line-height: 1.5; }
+  .pin b { display: block; font: 400 26px var(--serif); color: var(--ink); margin-bottom: 6px; }
+  .pin em { display: block; font-style: normal; color: var(--ink); font-weight: 500; margin-top: 14px; }
+
+  footer.site { border-top: 1px solid var(--line); padding: 30px 0 40px; font-size: 13px; color: var(--muted); }
+  footer.site .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+  .fab { display: none; }
+
+  @media (max-width: 960px) {
+    section { padding: 80px 0; }
+    .nav ul { display: none; }
+    .hero-grid, .contacts { grid-template-columns: 1fr; gap: 44px; }
+    .hero-img { aspect-ratio: 4/3; }
+    .checker { display: none; }
+    .dirs, .team, .revs { grid-template-columns: 1fr 1fr; }
+    .plist { columns: 1; }
+    .head { flex-direction: column; align-items: start; }
+    .gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 220px 160px 160px; }
+    .gallery .big { grid-row: auto; grid-column: span 2; }
+  }
+  /* phone */
+  .menu-btn, .mnav, .swipe, .show-all { display: none; }
+  @media (max-width: 600px) {
+    body { font-size: 15px; padding-bottom: calc(84px + env(safe-area-inset-bottom)); }
+    .wrap { padding: 0 16px; }
+    section { padding: 64px 0; }
+    h2 { font-size: 34px; }
+    .head { margin-bottom: 28px; gap: 12px; }
+    .head p { font-size: 14px; }
+
+    /* header: logo + call + menu */
+    .nav { height: 58px; }
+    .logo { font-size: 21px; }
+    .nav .btn { display: none; }
+    .menu-btn { display: grid; place-items: center; width: 44px; height: 44px; margin-right: -10px; background: none; border: 0; cursor: pointer; }
+    .menu-btn span, .menu-btn span::before, .menu-btn span::after { display: block; width: 20px; height: 1.5px; background: var(--ink); position: relative; content: ""; transition: transform .25s; }
+    .menu-btn span::before { position: absolute; top: -6px; }
+    .menu-btn span::after { position: absolute; top: 6px; }
+    .open .menu-btn span { background: transparent; }
+    .open .menu-btn span::before { transform: translateY(6px) rotate(45deg); }
+    .open .menu-btn span::after { transform: translateY(-6px) rotate(-45deg); }
+    .mnav { display: block; position: absolute; top: 100%; left: 0; right: 0; background: var(--bg); max-height: 0; overflow: hidden; transition: max-height .3s; }
+    .open .mnav { max-height: 420px; border-bottom: 1px solid var(--line); box-shadow: 0 16px 30px rgba(0,0,0,.08); }
+    .mnav a { display: block; padding: 15px 16px; border-bottom: 1px solid var(--line); font-size: 17px; }
+    .mnav a:last-child { border: 0; }
+
+    /* hero: photo first, then text */
+    .hero { padding-top: 0; }
+    .hero .wrap { padding: 0; }
+    .hero-grid { gap: 0; }
+    .hero-img { order: -1; aspect-ratio: 5/4; }
+    .hero-grid > div:not(.hero-img) { padding: 28px 16px 0; }
+    .hero h1 { font-size: 42px; margin: 14px 0 16px; }
+    .hero p.lead { font-size: 16px; }
+    .hero .actions { flex-direction: column; margin: 26px 0 30px; }
+    .hero .actions .btn { justify-content: center; }
+    .hero .actions .btn-dark { display: none; } /* есть кнопка внизу экрана */
+    .facts b { font-size: 26px; }
+    .facts span { font-size: 12px; line-height: 1.3; display: block; margin-top: 6px; }
+    .facts div { padding: 16px 8px 0 0; }
+
+    .strip { margin-top: 48px; padding: 20px 0; }
+    .strip .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; font-size: 13px; }
+    .strip span::before { margin-right: 8px; }
+
+    /* directions: compact list */
+    .dirs { grid-template-columns: 1fr; }
+    .dir { display: grid; grid-template-columns: 28px 1fr auto; align-items: baseline; column-gap: 10px; padding: 20px 16px; }
+    .dir h3 { margin: 0; font-size: 22px; }
+    .dir p { grid-column: 2 / 4; font-size: 14px; margin-top: 6px; }
+    .dir .from { margin: 0; grid-column: 3; grid-row: 1; font-size: 13px; color: var(--muted); }
+
+    /* prices: swipeable tabs */
+    .tabs { flex-wrap: nowrap; overflow-x: auto; margin: 0 -16px 20px; padding: 0 16px; scrollbar-width: none; }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tab { flex: none; height: 44px; }
+    .row { font-size: 14px; padding: 13px 0; }
+    .row .dots { min-width: 8px; }
+    .plist:not(.all) .row:nth-child(n+9) { display: none; }
+    .show-all { display: flex; width: 100%; justify-content: center; margin-top: 16px; background: none; font-family: var(--sans); cursor: pointer; }
+    .show-all[hidden] { display: none; }
+    section { scroll-margin-top: 58px; }
+
+    /* team, reviews, gallery: horizontal swipe */
+    .team, .revs, .gallery { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 10px; margin: 0 -16px; padding: 0 16px 6px; background: none; border: 0; scrollbar-width: none; }
+    .team::-webkit-scrollbar, .revs::-webkit-scrollbar, .gallery::-webkit-scrollbar { display: none; }
+    .member, .rev { flex: 0 0 82%; scroll-snap-align: start; scroll-margin-left: 16px; }
+    .member { border: 1px solid var(--line); padding: 24px; }
+    .member .av { margin-bottom: 18px; }
+    .rev { border: 1px solid #2c2c2c; padding: 24px; }
+    .rev p { font-size: 18px; }
+    .gallery { height: 300px; }
+    .gallery img, .gallery .big { flex: 0 0 78%; height: 100%; scroll-snap-align: start; scroll-margin-left: 16px; }
+    .swipe { display: block; margin-top: 14px; font-size: 12px; color: var(--muted); letter-spacing: .08em; }
+    #reviews .swipe { color: #9a968f; }
+    .score b { font-size: 64px; }
+
+    /* contacts */
+    .clist { margin-top: 24px; }
+    .clist div { grid-template-columns: 1fr; gap: 2px; padding: 14px 0; }
+    .clist a { display: inline-block; padding: 4px 0; }
+    .contacts .actions { flex-direction: column; }
+    .contacts .actions .btn { justify-content: center; }
+    .map { min-height: 340px; }
+    .pin { left: 12px; right: 12px; bottom: 12px; padding: 18px; }
+
+    .fab { display: flex; position: fixed; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); z-index: 30; justify-content: center; height: 56px; font-size: 15px; box-shadow: 0 8px 24px rgba(0,0,0,.18); }
+    .fab.wa { right: 76px; }
+    .fab.call { left: auto; width: 56px; padding: 0; background: var(--paper); color: var(--ink); }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo">Ambition<small>beauty salon</small></a>
+    <ul>
+      <li><a href="#services">Услуги</a></li>
+      <li><a href="#prices">Цены</a></li>
+      <li><a href="#team">Мастера</a></li>
+      <li><a href="#reviews">Отзывы</a></li>
+      <li><a href="#contacts">Контакты</a></li>
+    </ul>
+    <a class="btn btn-dark wa" href="#">Записаться</a>
+    <button class="menu-btn" aria-label="Меню" aria-expanded="false"><span></span></button>
+  </div>
+  <nav class="mnav">
+    <a href="#services">Услуги</a>
+    <a href="#prices">Цены</a>
+    <a href="#team">Мастера</a>
+    <a href="#reviews">Отзывы</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Салон красоты · Кокшетау</span>
+        <h1>Красота,<br>к которой <em>возвращаются</em></h1>
+        <p class="lead">Косметология с медицинской лицензией, волосы, ногти и уход для неё и для него в одном спокойном пространстве на Ауельбекова, 54.</p>
+        <div class="actions">
+          <a class="btn btn-dark wa" href="#">Записаться в WhatsApp</a>
+          <a class="btn btn-line" href="#prices">Смотреть цены</a>
+        </div>
+        <div class="facts">
+          <div><b>4.9</b><span>рейтинг в 2ГИС</span></div>
+          <div><b>136</b><span>оценок клиентов</span></div>
+          <div><b>2019</b><span>победитель 2GIS Awards</span></div>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="https://i7.photo.2gis.com/images/branch/0/30258560103626682_f288_1920x.jpg" alt="Интерьер салона Ambition">
+        <span class="checker" aria-hidden="true"></span>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="wrap">
+      <span>Медицинская лицензия</span>
+      <span>Ежедневно 10:00–20:00</span>
+      <span>Карта · наличные · QR</span>
+      <span>Подарочные сертификаты</span>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="eyebrow">Направления</span>
+          <h2>Всё для ухода<br>в одном месте</h2>
+        </div>
+        <p>Два этажа, отдельные зоны для каждой процедуры и мастера, к которым клиенты ходят годами.</p>
+      </div>
+      <div class="dirs">
+        <article class="dir">
+          <span class="n">01</span>
+          <h3>Косметология</h3>
+          <p>Hydrafacial, чистки, пилинги, биоревитализация, ботулотоксин, мезотерапия, лазер и фотоомоложение.</p>
+          <div class="from">от 14 000 ₸</div>
+        </article>
+        <article class="dir">
+          <span class="n">02</span>
+          <h3>Волосы</h3>
+          <p>Стрижки, сложное окрашивание, реконструкция, «Абсолютное счастье» Lebel, вечерние причёски.</p>
+          <div class="from">от 2 000 ₸</div>
+        </article>
+        <article class="dir">
+          <span class="n">03</span>
+          <h3>Ногти</h3>
+          <p>Аппаратный маникюр, гель-лак, наращивание, смарт- и СПА-педикюр. Женский, мужской, детский.</p>
+          <div class="from">от 3 000 ₸</div>
+        </article>
+        <article class="dir">
+          <span class="n">04</span>
+          <h3>Шугаринг</h3>
+          <p>Деликатная депиляция пастой: от отдельных зон до полной. Есть мужская эпиляция.</p>
+          <div class="from">от 2 000 ₸</div>
+        </article>
+        <article class="dir">
+          <span class="n">05</span>
+          <h3>Массаж</h3>
+          <p>Релаксирующий, оздоровительный, антицеллюлитный, лимфодренаж и детский массаж.</p>
+          <div class="from">по записи</div>
+        </article>
+        <article class="dir">
+          <span class="n">06</span>
+          <h3>Прокол ушей</h3>
+          <p>Классический прокол для взрослых и детей: быстро, стерильно и спокойно.</p>
+          <div class="from">по записи</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="prices">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="eyebrow">Прайс-лист</span>
+          <h2>Цены</h2>
+        </div>
+        <p>Итоговую стоимость мастер называет на консультации, так как она зависит от длины волос, зоны и препарата.</p>
+      </div>
+
+      <div class="tabs" role="tablist">
+        <button class="tab" role="tab" aria-selected="true" data-t="cosm">Косметология</button>
+        <button class="tab" role="tab" aria-selected="false" data-t="hair">Волосы</button>
+        <button class="tab" role="tab" aria-selected="false" data-t="nails">Ногти</button>
+        <button class="tab" role="tab" aria-selected="false" data-t="sugar">Шугаринг</button>
+      </div>
+
+      <div class="plist on" id="cosm">
+        <div class="row">Чистка лица комбинированная<span class="dots"></span><span class="p">18 000 ₸</span></div>
+        <div class="row">Микродермабразия<span class="dots"></span><span class="p">15 500 ₸</span></div>
+        <div class="row">Уходовая процедура<span class="dots"></span><span class="p">15 000 ₸</span></div>
+        <div class="row">Hydrafacial (1+1)<span class="dots"></span><span class="p">21 000 ₸</span></div>
+        <div class="row">Hydrafacial (2+2)<span class="dots"></span><span class="p">27 000 ₸</span></div>
+        <div class="row">Hydrafacial (3+3)<span class="dots"></span><span class="p">33 000 ₸</span></div>
+        <div class="row">Oxy Jet<span class="dots"></span><span class="p">18 000 ₸</span></div>
+        <div class="row">Карбоновый пилинг<span class="dots"></span><span class="p">15 500 ₸</span></div>
+        <div class="row">Пилинг Skintech TCA<span class="dots"></span><span class="p">18 000 ₸</span></div>
+        <div class="row">Пилинг PRX-T33<span class="dots"></span><span class="p">33 500 ₸</span></div>
+        <div class="row">Мезотерапия лица<span class="dots"></span><span class="p">14 000 ₸</span></div>
+        <div class="row">Мезотерапия головы<span class="dots"></span><span class="p">20 000 ₸</span></div>
+        <div class="row">Плазмолифтинг, 1 пробирка<span class="dots"></span><span class="p">20 500 ₸</span></div>
+        <div class="row"><span>Биоревитализация Вискодерм<small>0,8% · 1,6% · 2,0%</small></span><span class="dots"></span><span class="p">от 25 500 ₸</span></div>
+        <div class="row">Биоревитализация Гилуаль<span class="dots"></span><span class="p">от 35 000 ₸</span></div>
+        <div class="row">Биоревитализация Коллост<span class="dots"></span><span class="p">от 76 000 ₸</span></div>
+        <div class="row">Липолитик<span class="dots"></span><span class="p">17 500 ₸</span></div>
+        <div class="row">Ботулотоксин, 1 зона<span class="dots"></span><span class="p">20 500 ₸</span></div>
+        <div class="row">Ботулотоксин full face<span class="dots"></span><span class="p">80 000–100 000 ₸</span></div>
+        <div class="row">Гипергидроз<span class="dots"></span><span class="p">80 000 ₸</span></div>
+        <div class="row">Увеличение губ<span class="dots"></span><span class="p">от 50 500 ₸</span></div>
+        <div class="row">Полимолочная кислота<span class="dots"></span><span class="p">136 000 ₸</span></div>
+        <div class="row"><span>Фотоомоложение, акне, купероз<small>1 вспышка</small></span><span class="dots"></span><span class="p">от 900 ₸</span></div>
+        <div class="row"><span>Фотоэпиляция<small>1 вспышка</small></span><span class="dots"></span><span class="p">300 ₸</span></div>
+        <div class="row">Удаление пигментации<span class="dots"></span><span class="p">от 3 500 ₸</span></div>
+        <div class="row">Удаление новообразований<span class="dots"></span><span class="p">от 1 000 ₸</span></div>
+        <div class="row">Коагуляция сосудов<span class="dots"></span><span class="p">от 500 ₸</span></div>
+      </div>
+
+      <div class="plist" id="hair">
+        <div class="row">Стрижка S<span class="dots"></span><span class="p">6 000 ₸</span></div>
+        <div class="row">Стрижка M, L<span class="dots"></span><span class="p">7 000 ₸</span></div>
+        <div class="row">Стрижка чёлки<span class="dots"></span><span class="p">2 000 ₸</span></div>
+        <div class="row">Стрижка кончиков<span class="dots"></span><span class="p">2 500 ₸</span></div>
+        <div class="row">Детская стрижка до 6 лет<span class="dots"></span><span class="p">4 000 ₸</span></div>
+        <div class="row">Детская стрижка до 10 лет<span class="dots"></span><span class="p">5 000 ₸</span></div>
+        <div class="row">Мытьё и сушка<span class="dots"></span><span class="p">5 000 ₸</span></div>
+        <div class="row">Окрашивание в один тон<span class="dots"></span><span class="p">22 000–35 000 ₸</span></div>
+        <div class="row">Сложное окрашивание<span class="dots"></span><span class="p">30 000–70 000 ₸</span></div>
+        <div class="row">Химическая завивка<span class="dots"></span><span class="p">20 000–30 000 ₸</span></div>
+        <div class="row">«Абсолютное счастье» Lebel<span class="dots"></span><span class="p">30 000 ₸</span></div>
+        <div class="row">Пилинг кожи головы<span class="dots"></span><span class="p">6 000–15 000 ₸</span></div>
+        <div class="row">Реконструкция волос, горячая<span class="dots"></span><span class="p">35 000–55 000 ₸</span></div>
+        <div class="row">Реконструкция волос, холодная<span class="dots"></span><span class="p">50 000–100 000 ₸</span></div>
+      </div>
+
+      <div class="plist" id="nails">
+        <div class="row">Маникюр аппаратный<span class="dots"></span><span class="p">5 000 ₸</span></div>
+        <div class="row">Маникюр + покрытие лак<span class="dots"></span><span class="p">6 000 ₸</span></div>
+        <div class="row">Маникюр + снятие гель-лака<span class="dots"></span><span class="p">6 500 ₸</span></div>
+        <div class="row">Маникюр + покрытие база<span class="dots"></span><span class="p">9 000 ₸</span></div>
+        <div class="row">Маникюр + гель-лак + дизайн<span class="dots"></span><span class="p">10 000 ₸</span></div>
+        <div class="row">Маникюр детский<span class="dots"></span><span class="p">3 000 ₸</span></div>
+        <div class="row">Наращивание + дизайн, короткие<span class="dots"></span><span class="p">12 000 ₸</span></div>
+        <div class="row">Наращивание + дизайн, длинные<span class="dots"></span><span class="p">15 000 ₸</span></div>
+        <div class="row">Смарт-педикюр<span class="dots"></span><span class="p">8 000 ₸</span></div>
+        <div class="row">Смарт-педикюр мужской<span class="dots"></span><span class="p">9 000 ₸</span></div>
+        <div class="row">Смарт-педикюр + лак<span class="dots"></span><span class="p">10 000 ₸</span></div>
+        <div class="row">Смарт-педикюр + гель-лак<span class="dots"></span><span class="p">12 000 ₸</span></div>
+        <div class="row"><span>СПА-педикюр<small>чистка, пилинг до колен, маска, массаж, парафин</small></span><span class="dots"></span><span class="p">13 500 ₸</span></div>
+        <div class="row">Парафинотерапия<span class="dots"></span><span class="p">2 000 ₸</span></div>
+      </div>
+
+      <div class="plist" id="sugar">
+        <div class="row">Руки до локтя<span class="dots"></span><span class="p">4 000 ₸</span></div>
+        <div class="row">Руки полностью<span class="dots"></span><span class="p">5 000 ₸</span></div>
+        <div class="row">Ноги до колен<span class="dots"></span><span class="p">4 500 ₸</span></div>
+        <div class="row">Ноги полностью<span class="dots"></span><span class="p">6 500 ₸</span></div>
+        <div class="row">Бикини<span class="dots"></span><span class="p">5 000 ₸</span></div>
+        <div class="row">Подмышки<span class="dots"></span><span class="p">3 000 ₸</span></div>
+        <div class="row">Усики<span class="dots"></span><span class="p">2 000 ₸</span></div>
+      </div>
+
+      <button class="btn btn-line show-all">Показать все цены</button>
+      <p class="note">Цены указаны в тенге и могут меняться. Уточняйте актуальную стоимость у администратора.</p>
+    </div>
+  </section>
+
+  <section id="team">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="eyebrow">Мастера</span>
+          <h2>Их имена<br>пишут в отзывах</h2>
+        </div>
+        <p>Некоторые клиенты ходят к ним больше десяти лет.</p>
+      </div>
+      <div class="team">
+        <div class="member"><div class="av">Е</div><h3>Елена</h3><div class="role">Косметолог</div><q>Профессионал своего дела, всё подробно объяснила, результат супер</q></div>
+        <div class="member"><div class="av">Р</div><h3>Раиса</h3><div class="role">Стилист, колорист</div><q>Подобрала лучшее решение в окрашивании и подлечила волосы</q></div>
+        <div class="member"><div class="av">А</div><h3>Алина</h3><div class="role">Маникюр и педикюр</div><q>Хожу исключительно к ней, смело рекомендую</q></div>
+        <div class="member"><div class="av">Я</div><h3>Яна</h3><div class="role">Парикмахер</div><q>Получилось именно так, как я хотела</q></div>
+        <div class="member"><div class="av">И</div><h3>Ирина</h3><div class="role">Мастер маникюра</div><q>Очень быстро и чётко, аккуратный и красивый маникюр</q></div>
+        <div class="member"><div class="av">Ю</div><h3>Юлия</h3><div class="role">Массажист</div><q>Лучший массажист</q></div>
+      </div>
+      <span class="swipe">Листайте →</span>
+    </div>
+  </section>
+
+  <section id="space" style="padding-top:0">
+    <div class="wrap">
+      <div class="gallery">
+        <img class="big" src="https://i8.photo.2gis.com/images/branch/201/28288235202935194_641f_1920x.jpg" alt="Зал салона" loading="lazy">
+        <img src="https://i9.photo.2gis.com/images/branch/201/28288235194887677_bc54_1920x.jpg" alt="Зона маникюра" loading="lazy">
+        <img src="https://i7.photo.2gis.com/images/branch/201/28288235194887674_b984_1920x.jpg" alt="Педикюрные кресла" loading="lazy">
+        <img src="https://i9.photo.2gis.com/images/branch/201/28288235194887671_446b_1920x.jpg" alt="Зона ожидания" loading="lazy">
+        <img src="https://i1.photo.2gis.com/images/branch/0/30258560103698873_c8ae_1920x.jpg" alt="Детали интерьера" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="eyebrow">Отзывы</span>
+          <h2>Что говорят клиенты</h2>
+        </div>
+        <div class="score"><b>4.9</b><span>136 оценок<br>81 отзыв в 2ГИС</span></div>
+      </div>
+      <div class="revs">
+        <article class="rev"><p>Безумно приятно находиться в салоне. Хожу только сюда! Мастера своего дела!</p><footer><b>Анель</b>4 посещения</footer></article>
+        <article class="rev"><p>Супер салон! Суперпрофессиональные мастера Елена, Раиса, Алина! Обслуживаюсь более 10 лет!</p><footer><b>Галия С.</b>постоянный клиент</footer></article>
+        <article class="rev"><p>Впервые делала процедуру Hydrafacial, осталась довольна! Всем рекомендую этот уютный салон.</p><footer><b>Елена В.</b>косметология</footer></article>
+        <article class="rev"><p>Делала пилинг кожи головы, процедура супер! Невероятное чувство чистоты и свежести.</p><footer><b>Gulim O.</b>уход за волосами</footer></article>
+        <article class="rev"><p>Самый любимый салон в городе. Тишина. Нет лишней суеты, мастера лучшие.</p><footer><b>Le M.</b></footer></article>
+        <article class="rev"><p>Рекомендую приобретать сертификаты для своих родных и близких.</p><footer><b>Сергей С.</b>подарочный сертификат</footer></article>
+      </div>
+      <span class="swipe">Листайте →</span>
+      <div class="more"><a href="https://2gis.kz/kokshetau/firm/70000001033566035/tab/reviews" target="_blank" rel="noopener">Все отзывы в 2ГИС →</a></div>
+    </div>
+  </section>
+
+  <section id="contacts">
+    <div class="wrap contacts">
+      <div>
+        <span class="eyebrow">Контакты</span>
+        <h2>Ждём вас<br>в гости</h2>
+        <dl class="clist">
+          <div><dt>Адрес</dt><dd>ул. Еркина Ауельбекова, 54, 1–2 этаж<br>Кокшетау</dd></div>
+          <div><dt>Время</dt><dd>Ежедневно, 10:00–20:00</dd></div>
+          <div><dt>Телефон</dt><dd><a href="tel:+77162723160">+7 (7162) 72-31-60</a></dd></div>
+          <div><dt>WhatsApp</dt><dd><a class="wa" href="#">+7 747 159 99 15</a></dd></div>
+          <div><dt>Instagram</dt><dd><a href="https://instagram.com/ambition_beauty_kokshe" target="_blank" rel="noopener">@ambition_beauty_kokshe</a></dd></div>
+        </dl>
+        <div class="actions">
+          <a class="btn btn-dark wa" href="#">Записаться</a>
+          <a class="btn btn-line" href="https://2gis.kz/kokshetau/firm/70000001033566035" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+        </div>
+      </div>
+      <a class="map" href="https://2gis.kz/kokshetau/firm/70000001033566035" target="_blank" rel="noopener">
+        <img src="https://i7.photo.2gis.com/photo-gallery/ad5681fa-074d-4a27-b104-1cf955ecdb45_1920x.jpg" alt="Салон Ambition внутри" loading="lazy">
+        <span class="pin">
+          <b>Ауельбекова, 54</b>
+          2 минуты пешком от остановки «Университет» · рядом парковка
+          <em>Открыть маршрут →</em>
+        </span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© Ambition, салон красоты · Кокшетау</span>
+    <span>Медицинская лицензия на косметологические услуги</span>
+  </div>
+</footer>
+
+<a class="btn btn-dark fab wa" href="#">Записаться в WhatsApp</a>
+<a class="btn fab call" href="tel:+77162723160" aria-label="Позвонить">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+</a>
+
+<script>
+  const header = document.querySelector("header");
+  const menuBtn = document.querySelector(".menu-btn");
+  menuBtn.addEventListener("click", () => {
+    const open = header.classList.toggle("open");
+    menuBtn.setAttribute("aria-expanded", open);
+  });
+  document.querySelectorAll(".mnav a").forEach(a => a.addEventListener("click", () => header.classList.remove("open")));
+
+  const wa = "https://wa.me/77471599915?text=" + encodeURIComponent("Здравствуйте! Хочу записаться в Ambition.");
+  document.querySelectorAll(".wa").forEach(a => { a.href = wa; a.target = "_blank"; a.rel = "noopener"; });
+
+  const showAll = document.querySelector(".show-all");
+  const syncShowAll = () => {
+    const list = document.querySelector(".plist.on");
+    showAll.hidden = list.classList.contains("all") || list.children.length <= 8;
+  };
+  showAll.addEventListener("click", () => {
+    document.querySelector(".plist.on").classList.add("all");
+    syncShowAll();
+  });
+
+  document.querySelectorAll(".tab").forEach(tab => {
+    tab.addEventListener("click", () => {
+      document.querySelectorAll(".tab").forEach(t => t.setAttribute("aria-selected", t === tab));
+      document.querySelectorAll(".plist").forEach(l => l.classList.toggle("on", l.id === tab.dataset.t));
+      syncShowAll();
+    });
+  });
+  syncShowAll();
+</script>
+</body>
+</html>
